@@ -65,8 +65,10 @@ if (!defined('ABSPATH')) {
 								</div>
 							</div>
 							<div class="form-row clearfix">
-								<div class="form-field col-full">
+								<div class="form-submit-row form-field col-full clearfix">
+									<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
 									<div class="form-submit-wrap">
+										<input type="hidden" name="submitted" value="1"/>
 										<input id="submit" type="submit" name="sbmit" value="Connect"/>
 									</div>
 								</div>

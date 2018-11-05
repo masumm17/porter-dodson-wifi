@@ -5,4 +5,7 @@
 
 define( 'ABSPATH', dirname( __FILE__ ) . '/' );
 
-include ABSPATH . 'templates/main.php';
+require_once ABSPATH . 'inc/pd-config.php';
+require_once ABSPATH . 'inc/class-pdwife.php';
+
+new PD_WiFi();
