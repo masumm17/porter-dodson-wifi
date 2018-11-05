@@ -1,10 +1,443 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Nov 1, 2018, 8:59:14 PM
-    Author     : Mahbub
-*/
 
+@font-face {
+    font-family: 'Museo500-Regular';
+    src: url('../fonts/Museo500-Regular-webfont.woff2') format('woff2'),
+         url('../fonts/Museo500-Regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'Museo300-Regular';
+    src: url('../fonts/Museo300-Regular-webfont.woff2') format('woff2'),
+         url('../fonts/Museo300-Regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+    box-sizing: border-box;
+}
+
+body {
+    line-height:1;
+    font-family: "Museo300-Regular", Arial, "Helvetica Neue", Helvetica, sans-serif;
+    
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000; 
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;   
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+input:focus {
+    outline: 0 none;
+}
+
+.clearfix:before,
+.clearfix:after {
+	content: "";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+.clearfix {
+	*zoom: 1;
+}
+
+.wrap {
+    min-height: 100vh;
+    background-color: #e8e4e8;
+    position: relative;
+    padding: 36px 46px;
+}
+.top-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+}
+.top-bar div {
+    height: 6px;
+    width: 16.667%;
+    float: left;
+}
+.top-bar div:nth-child(1) {
+    background-color: #be8893;
+}
+.top-bar div:nth-child(2) {
+    background-color: #d5d000;
+}
+.top-bar div:nth-child(3) {
+    background-color: #d5d000;
+}
+.top-bar div:nth-child(4) {
+    background-color: #60d0d5;
+}
+.top-bar div:nth-child(5) {
+    background-color: #7c69ae;
+}
+.top-bar div:nth-child(6) {
+    background-color: #bdafba;
+}
+.bottom-bar {
+    background-color: #3b436d;
+    height: 16px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.container {
+    background: #fff;
+    max-width: 660px;
+    margin: 0 auto;
+    min-height: 1px;
+    width: 100%;
+    padding: 25px 0 32px;
+}
+.page-wrap {
+    margin: 0 30px;
+}
+.header {
+    width: 160px;
+    margin-right: 35px;
+    float: left;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.logo {
+    margin-bottom: 27px;
+}
+.logo img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+.wifi-icon {
+    text-align: center;
+}
+.wifi-icon img {
+    height: auto;
+    max-width: 100%;
+}
+.main {
+    margin-bottom: 15px;
+}
+
+.main h1 {
+    font-family: 'Museo500-Regular';
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 1em;
+    color: #7473a9;
+    margin: 0 0 6px;
+}
+.main p {
+    color: #7473a9;
+    font-family: "Museo500-Regular", Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.4em;
+    font-weight: normal;
+    margin: 0 0 20px;
+}
+.form-row {
+    margin-bottom: 15px;
+}
+.form-row:last-child {
+    margin-bottom: 0;
+}
+.form-field {
+    position: relative;
+}
+.form-field input[type="text"],
+.form-field input[type="email"] {
+    position: relative;
+    z-index: 1;
+    color: #19095f;
+    font-size: 14px;
+    line-height: 1em;
+    padding: 12px 8px;
+    background-color: #e8e4e8;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border: 0 none;
+    font-family: "Museo500-Regular", Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+.form-field.has-error1 input[type="text"],
+.form-field.has-error1 input[type="email"] {
+    border: 1px solid #f00;
+}
+.form-field label {
+    color: #19095f;
+    font-family: "Museo500-Regular", Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1em;
+    line-height: 1em;
+    padding: 0;
+    margin: 0;
+}
+.form-field .form-field-label {
+    position: absolute;
+    top: 13px;
+    left: 8px;
+    z-index: 2;
+    transition: opacity .25s;
+}
+.form-field.hide-label .form-field-label{
+    opacity: 0!important;
+}
+.required-asterisk {
+    color: #ff0000;
+}
+.form-field label.form-field-label-cb {
+    display: block;
+    margin: 0;
+    position: relative;
+    padding-left: 20px;
+    line-height: 1.4em;
+}
+.form-field-label-cb input[type="checkbox"] {
+    vertical-align: middle;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    margin: 0;
+}
+
+.form-field-label-cb span {
+    vertical-align: top;
+}
+.form-field.has-error label {
+    color: #f00!important;
+}
+.form-submit-wrap {
+    float: right;
+    position: relative;
+    overflow: hidden;
+}
+.form-submit-wrap::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: #fff;
+    bottom: -7px;
+    right: -7px;
+    z-index: 2;
+    transform: rotate(45deg);
+}
+#submit {
+    font-family: "Museo500-Regular", Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: #fff;
+    background: #6f6fa5;
+    border: 0 none;
+    display: block;
+    font-size: 13px;
+    padding: 8px 22px 8px 11px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.footer {
+    clear: both;
+    border-top: 1px solid #bab1ba;
+    border-bottom: 1px solid #bab1ba;
+    padding: 10px 0 0;
+}
+.footer-title {
+    color: #19095f;
+    line-height: 1em;
+    margin-bottom: 10px;
+    position: relative;
+    font-size: 13px;
+    font-family: "Museo500-Regular", Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.tc-toogle-arrow {
+    position: absolute;
+    width: 15px;
+    height: 9px;
+    right: 0;
+    top: 2px;
+    overflow: hidden;
+}
+.toogle-shown .tc-toogle-arrow {
+    transform: rotate(180deg);
+}
+.tc-toogle-arrow::after{
+    content: "";
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    border-left: 1px solid #19095f;
+    border-bottom: 1px solid #19095f;
+    transform: rotate(135deg);
+    top: 3px;
+    left: 3px;
+}
+.footer-content {
+    background: #f3f3f3;
+    padding: 20px 35px;
+    height: 135px;
+    overflow-y: auto;
+    font-size: 12px;
+    line-height: 18px;
+    color: #19095f;
+    margin: 0 0 10px;
+}
+.footer-content p {
+    margin: 0 0 25px;
+}
+.footer-content p:last-child {
+    margin-bottom: 0;
+}
+@media (min-width: 768px) {
+    .wrap {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+    .col-1of2 {
+        float: left;
+        width: 195px;
+    }
+    .col-1of2:first-child {
+        margin-right: 15px;
+    }
+    .main {
+        width: 405px;
+        float: left;
+        margin-bottom: 15px;
+    }
+}
+@media (max-width: 767px) {
+    .wrap {
+        padding: 0;
+        background: #fff;
+    }
+    .container {
+        padding: 30px 0;
+    }
+    .page-wrap {
+        margin: 0 20px;
+    }
+    .header {
+        width: 265px;
+        float: none;
+        margin: 0 auto 36px;
+    }
+    .logo {
+        width: 140px;
+        margin-right: 30px;
+        float: left;
+    }
+    .wifi-icon {
+        width: 95px;
+        float: left;
+    }
+    .main h1 {
+        text-align: center;
+    }
+    .main p {
+        text-align: center;
+    }
+    .col-1of2:first-child {
+        margin-bottom: 15px;
+    }
+}
