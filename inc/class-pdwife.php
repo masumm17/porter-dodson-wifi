@@ -64,8 +64,8 @@ class PD_WiFi {
   browser_agent varchar(255) NOT NULL default '',
   PRIMARY KEY  (ID),
   KEY email (email(10))
-) DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;";
-		$this->db->query($table_schema)->fetchAll();
+) DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;";
+		$this->db->query($table_schema);
 	}
 	
 	public function process_submission() {
@@ -112,7 +112,7 @@ class PD_WiFi {
 			$this->install();
 		}
 		if ( !$this->installed() ) {
-			echo 'Database is ont installed! <a href="/?install=1">Install now</a>';
+			echo 'Database is not installed! <a href="/?install=1">Install now</a>';
 			die();
 		}
 		$this->actions();
