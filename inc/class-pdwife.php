@@ -27,6 +27,7 @@ class PD_WiFi {
 			'username'		 => DB_USER,
 			'password'		 => DB_PASWORD,
 			'server'		 => DB_SERVER,
+			'logging'		 => true
 		);
 		if ( defined( 'DB_SERVER_PORT' ) && DB_SERVER_PORT ) {
 			$return[ 'port' ] = DB_SERVER_PORT;
